@@ -1,0 +1,69 @@
+/* Root header */
+.customerPageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+/* Logo */
+.customerPageHeader__logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #5a3e2b; /* coffee brown */
+}
+
+/* Desktop nav */
+.customerPageHeader__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.customerPageHeader__nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.customerPageHeader__nav a:hover {
+  color: #5a3e2b;
+}
+
+/* Hamburger button */
+.customerPageHeader__menuToggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .customerPageHeader__nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+  }
+
+  .customerPageHeader__nav.open {
+    display: flex;
+  }
+
+  .customerPageHeader__menuToggle {
+    display: block;
+    color: #333;
+  }
+}
