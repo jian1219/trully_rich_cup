@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="customerPageHeader">
       <div className="customerPageHeader__logo">
-        <Link to="/">☕ TRULLY RICH CUP</Link>
+        <h1>☕ TRULLY RICH CUP</h1>
       </div>
 
       <nav className={`customerPageHeader__nav ${isOpen ? "open" : ""}`}>

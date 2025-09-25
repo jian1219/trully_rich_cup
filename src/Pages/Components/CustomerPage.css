@@ -6,15 +6,16 @@
   background: white;
   padding: 10px 20px;
   border-bottom: 1px solid #ddd;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2000; /* keeps nav visible */
 }
 
-/* Logo */
-.customerPageHeader__logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #5a3e2b; /* coffee brown */
+.customerPageHeader__logo{
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
 }
 
 /* Desktop nav */
@@ -34,7 +35,7 @@
   color: #5a3e2b;
 }
 
-/* Hamburger button */
+/* Hamburger */
 .customerPageHeader__menuToggle {
   display: none;
   font-size: 1.8rem;
@@ -43,19 +44,20 @@
   cursor: pointer;
 }
 
-/* Mobile styles */
+/* Mobile nav */
 @media (max-width: 768px) {
   .customerPageHeader__nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 100%; /* sits right below header */
+    right: 0;
     background: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    width: 150px;
+    width: 180px;
+    z-index: 1000;
   }
 
   .customerPageHeader__nav.open {
@@ -65,5 +67,64 @@
   .customerPageHeader__menuToggle {
     display: block;
     color: #333;
+  }
+}
+
+
+.shopInfo {
+  height: 80vh; /* or 100vh if you want full screen */
+  background: url("/src/images/OIP.jpg") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px; /* ensures spacing on small screens */
+}
+
+.shopInfo__overlay {
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 40px 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 800px;
+  margin: 0 20px; /* left & right margin */
+}
+
+.shopInfo__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.shopInfo__description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shopInfo__title {
+    font-size: 2rem;
+  }
+  .shopInfo__description {
+    font-size: 1rem;
+  }
+  .shopInfo__overlay {
+    margin: 0 15px; /* tighter margins on tablets */
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopInfo__title {
+    font-size: 1.6rem;
+  }
+  .shopInfo__description {
+    font-size: 0.9rem;
+  }
+  .shopInfo__overlay {
+    margin: 0 10px; /* more margin on small phones */
+    padding: 20px 10px;
   }
 }

@@ -15,12 +15,18 @@ function Homepage() {
         <div>
           <ComponentsHeader />
         </div>
-        <h1>Home Marie gwapa</h1>
-
-        <div className='header-right'>
-           
-            <button onClick={goToAdminPage}>admin</button>
+        <div>
+            <section className="shopInfo">
+            <div className="shopInfo__overlay">
+              <h1 className="shopInfo__title">TRULLY RICH CUP</h1>
+              <p className="shopInfo__description">
+                Welcome to <strong>Trully Rich Cup</strong>, your cozy destination for freshly
+                brewed coffee, crafted with passion and served with care.
+              </p>
+            </div>
+          </section>
         </div>
+       
     </div>
   )
 }
